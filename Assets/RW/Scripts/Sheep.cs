@@ -8,6 +8,8 @@ public class Sheep : MonoBehaviour
     public float runSpeed;
     public float gotHayDestroyDelay;
     public float dropDestroyDelay;
+    public float heartOffset;
+    public GameObject heartPrefab;
 
     private bool hitByHay;
     private Collider myCollider;
@@ -42,6 +44,10 @@ public class Sheep : MonoBehaviour
     }
     private void HitByHay()
     {
+        Instantiate(heartPrefab, transform.position + new Vector3(0, heartOffset, 0), Quaternion.identity);
+        TweenScale tweenScale = gameObject.AddComponent<TweenScale>(); ;
+        tweenScale.targetScale = 0;
+        tweenScale.timeToReachTarget = gotHayDestroyDelay;
         sheepSpawner.RemoveSheepFromList(gameObject);
         hitByHay = true;
         runSpeed = 0;
