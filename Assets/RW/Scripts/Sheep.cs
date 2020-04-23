@@ -12,6 +12,7 @@ public class Sheep : MonoBehaviour
     public GameObject heartPrefab;
 
     private bool hitByHay;
+    private bool droped;
     private Collider myCollider;
     private Rigidbody myRigidbody;
     private SheepSpawner sheepSpawner;
@@ -36,7 +37,7 @@ public class Sheep : MonoBehaviour
             Destroy(other.gameObject); 
             HitByHay(); 
         }
-        else if (other.CompareTag("DropSheep"))
+        else if (other.CompareTag("DropSheep") && !droped)
         {
             Drop();
         }
@@ -44,12 +45,13 @@ public class Sheep : MonoBehaviour
     }
     private void HitByHay()
     {
+        sheepSpawner.RemoveSheepFromList(gameObject);
+        GameStateManager.Instance.SavedSheep();
         SoundManager.Instance.PlaySheepHitClip();
         Instantiate(heartPrefab, transform.position + new Vector3(0, heartOffset, 0), Quaternion.identity);
         TweenScale tweenScale = gameObject.AddComponent<TweenScale>(); ;
         tweenScale.targetScale = 0;
         tweenScale.timeToReachTarget = gotHayDestroyDelay;
-        sheepSpawner.RemoveSheepFromList(gameObject);
         hitByHay = true;
         runSpeed = 0;
         Destroy(gameObject, gotHayDestroyDelay);
@@ -57,8 +59,10 @@ public class Sheep : MonoBehaviour
 
     private void Drop()
     {
-        SoundManager.Instance.PlaySheepDroppedClip();
+        GameStateManager.Instance.DroppedSheep();
         sheepSpawner.RemoveSheepFromList(gameObject);
+        SoundManager.Instance.PlaySheepDroppedClip();
+        droped = true;
         myRigidbody.isKinematic = false; 
         myCollider.isTrigger = false; 
         Destroy(gameObject, dropDestroyDelay); 

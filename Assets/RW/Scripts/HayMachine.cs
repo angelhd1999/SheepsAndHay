@@ -28,12 +28,12 @@ public class HayMachine : MonoBehaviour
 
     private void UpdateMovement()
     {
-        float horizontalInput = Input.GetAxisRaw("Horizontal"); // 1
-        if (horizontalInput < 0 && transform.position.x > -horizontalBoundary) // 2
+        float horizontalInput = Input.GetAxisRaw("Horizontal");
+        if (horizontalInput < 0 && transform.position.x > -horizontalBoundary)
         {
             transform.Translate(transform.right * -movementSpeed * Time.deltaTime);
         }
-        else if (horizontalInput > 0 && transform.position.x < horizontalBoundary) // 3
+        else if (horizontalInput > 0 && transform.position.x < horizontalBoundary)
         {
             transform.Translate(transform.right * movementSpeed * Time.deltaTime);
         }
