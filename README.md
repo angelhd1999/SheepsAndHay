@@ -8,7 +8,7 @@
 
 Second deliverable, Lab 2 of Interactive Systems<br />
 
-This is the **list of improvements** that I have made over the version obtained through the tutorial:<br />
+This is the **list of improvements** that I have made over the version obtained through the class tutorial:<br />
 * Added **visual effects:** 
   * **Animation** for the **sheep**.
   * **Animation** for the **heart** that comes out of the sheep.
