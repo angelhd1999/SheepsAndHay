@@ -16,3 +16,4 @@ This is the **list of improvements** that I have made over the version obtained 
   * By the time **hay is shot**.
 * **Added game limit** (3 sheep fallen from the map).
 * **Added User Interface** to show saved and dropped sheeps.
+* **Added Main menu** to **start** or **quit** the game.
