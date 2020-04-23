@@ -14,4 +14,5 @@ This is the **list of improvements** that I have made over the version obtained 
   * For when a **sheep falls off the map**.
   * For when a **sheep is hit**.
   * By the time **hay is shot**.
-* **Added game limit** (3 sheep fallen from the map)
+* **Added game limit** (3 sheep fallen from the map).
+* **Added User Interface** to show saved and dropped sheeps.
