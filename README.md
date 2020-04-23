@@ -19,3 +19,4 @@ This is the **list of improvements** that I have made over the version obtained 
 * **Added game limit** (3 sheep fallen from the map).
 * **Added User Interface** to show saved and dropped sheeps.
 * **Added Main menu** to **start** or **quit** the game.
+* **Added** the **ability to change hay machine color** in the main menu by clicking in the hay machine.
