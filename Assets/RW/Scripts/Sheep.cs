@@ -44,6 +44,7 @@ public class Sheep : MonoBehaviour
     }
     private void HitByHay()
     {
+        SoundManager.Instance.PlaySheepHitClip();
         Instantiate(heartPrefab, transform.position + new Vector3(0, heartOffset, 0), Quaternion.identity);
         TweenScale tweenScale = gameObject.AddComponent<TweenScale>(); ;
         tweenScale.targetScale = 0;
@@ -56,6 +57,7 @@ public class Sheep : MonoBehaviour
 
     private void Drop()
     {
+        SoundManager.Instance.PlaySheepDroppedClip();
         sheepSpawner.RemoveSheepFromList(gameObject);
         myRigidbody.isKinematic = false; 
         myCollider.isTrigger = false; 
