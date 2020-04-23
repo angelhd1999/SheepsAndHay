@@ -1,4 +1,4 @@
-# Lab 1 - Sheeps and Hay<br />
+# Lab 2 - Sheeps and Hay<br />
 ##  Introduction to Scripting Part 1 - Interactive Systems<br />
 **Name:** Àngel Herrero Díaz <br />
 **P102 S102**<br />
